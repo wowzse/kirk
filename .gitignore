@@ -1,0 +1,9 @@
+.vs/
+x64/
+ipch/
+xray.exe
+geoip.dat
+geosite.dat
+sys
+offsets.json
+tools

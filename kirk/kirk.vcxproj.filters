@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{5250d1d0-f843-4640-9af7-cb81082065d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sdk">
+      <UniqueIdentifier>{49163551-352b-4655-8179-1304058922fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\memory">
+      <UniqueIdentifier>{37a3f34a-7212-49ef-9752-a015718662f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\render">
+      <UniqueIdentifier>{ff3f90a3-dea7-4342-9d4e-7eb0f87d4c3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\req">
+      <UniqueIdentifier>{e29ba391-745e-403d-9d06-8e1062a76a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\offsets">
+      <UniqueIdentifier>{16b6e9b9-0ac6-4336-a00c-4b165cfb98f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="proc.cpp">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="render.cpp">
+      <Filter>Source Files\render</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="types.cpp">
+      <Filter>Source Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="fields.cpp">
+      <Filter>Source Files\offsets</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk.cpp">
+      <Filter>Source Files\sdk</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="structs.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Source Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk.h">
+      <Filter>Source Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>Source Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="proc.h">
+      <Filter>Source Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="ntdll.h">
+      <Filter>Source Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>Source Files\render</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Source Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="req.h">
+      <Filter>Source Files\req</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>Source Files\req</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
+      <Filter>Source Files\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="offsetstable.h">
+      <Filter>Source Files\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="typestable.h">
+      <Filter>Source Files\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fields.h">
+      <Filter>Source Files\offsets</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Luck.asm">
+      <Filter>Source Files\memory</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ui.html">
+      <Filter>Source Files\req</Filter>
+    </None>
+  </ItemGroup>
+</Project>
