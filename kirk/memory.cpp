@@ -35,8 +35,13 @@ String Memory::readString(uintptr_t addr) {
 	return result;
 }
 
-std::optional<std::vector<std::byte>> Memory::read(uintptr_t addr, uint32_t start, uint32_t end) {
-	std::vector<std::byte> buff(end - start);
-	if (!detail::read(addr + start, buff.data(), buff.size())) return std::nullopt;
+std::optional<std::vector<std::byte>> Memory::read(uintptr_t addr, uint32_t end) {
+	std::vector<std::byte> buff(end);
+	if (!detail::read(addr, buff.data(), buff.size())) return std::nullopt;
 	return buff;
+}
+
+bool Memory::read(std::vector<std::byte>& buff, uintptr_t addr, uint32_t end) {
+	buff.reserve(end);
+	return detail::read(addr, buff.data(), buff.size());
 }

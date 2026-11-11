@@ -14,6 +14,14 @@ using Pointer = std::optional<uintptr_t>;
 using String = std::optional<std::string>;
 
 namespace Sdk {
+	struct Object {
+		std::vector<std::byte> buffer;
+		uintptr_t addr;
+		uint32_t end;
+
+		Object(uintptr_t addr, uint32_t end) : addr(addr), end(end) {};
+	};
+
 	namespace Player {
 		struct Object {
 			uintptr_t localPlayer;
@@ -23,7 +31,7 @@ namespace Sdk {
 			int accountAge;
 		};
 
-		std::optional<Player::Object> getPlayer();
+		std::optional<Player::Object> getPlayer(uintptr_t addr);
 	}
 
 	namespace Workspace {
@@ -37,10 +45,12 @@ namespace Sdk {
 
 	namespace Primitive {
 		struct Object {
-			Vector3 position;
+			uintptr_t validate;
 			Matrix3x3 rotation;
+			Vector3 position;
+			Vector3 assemblyLinearVelocity;
 			Vector3 size;
-			Vector3 linearVelocity;
+			uintptr_t owner;
 		};
 
 		std::optional<Primitive::Object> getPrimitive(uintptr_t addr);
@@ -57,7 +67,7 @@ namespace Sdk {
 			uintptr_t children;
 		};
 
-		std::optional<std::vector<uintptr_t>> getChildren(const Instance::Object& obj);
+		bool getChildren(const Instance::Object& obj, std::vector<uintptr_t>& vec);
 		std::optional<Instance::Object> getInstance(uintptr_t addr);
 	}
 

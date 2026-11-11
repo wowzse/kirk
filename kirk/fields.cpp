@@ -28,7 +28,6 @@ void TypeDef::load(nlohmann::json& o, nlohmann::json& t) {
 	for (auto& field : fields) {
 		uintptr_t offset = o[field.first];
 		*field.second.offset = offset;
-		if (offset > *start) *start = offset;
 
 		if (!field.second.type) continue;
 
@@ -60,7 +59,6 @@ void TypeMap::initTypes() {
 			{ "Workspace", Field { &Offsets::DataModel::Workspace, &Types::DataModel::Workspace } },
 			{ "GameId", Field { &Offsets::DataModel::GameId, &Types::DataModel::GameId } }
 		},
-		&Types::DataModel::start,
 		&Types::DataModel::end
 		});
 
@@ -74,7 +72,6 @@ void TypeMap::initTypes() {
 			{ "ChildrenEnd", Field { &Offsets::Instance::ChildrenEnd } },
 			{ "Parent", Field { &Offsets::Instance::Parent } }
 		},
-		&Types::Instance::start,
 		&Types::Instance::end
 		});
 
@@ -84,9 +81,9 @@ void TypeMap::initTypes() {
 			{ "Validate", Field { &Offsets::Primitive::Validate, &Types::Primitive::Validate } },
 			{ "Size", Field { &Offsets::Primitive::Size, &Types::Primitive::Size } },
 			{ "Rotation", Field { &Offsets::Primitive::Rotation, &Types::Primitive::Rotation } },
-			{ "AssemblyLinearVelocity", Field { &Offsets::Primitive::AssemblyLinearVelocity, &Types::Primitive::AssemblyLinearVelocity } }
+			{ "AssemblyLinearVelocity", Field { &Offsets::Primitive::AssemblyLinearVelocity, &Types::Primitive::AssemblyLinearVelocity } },
+			{ "Owner", Field { &Offsets::Primitive::Owner, &Types::Primitive::Owner } }
 		},
-		&Types::Primitive::start,
 		&Types::Primitive::end
 		});
 
@@ -95,7 +92,6 @@ void TypeMap::initTypes() {
 			{ "Primitive", Field { &Offsets::BasePart::Primitive, &Types::BasePart::Primitive } },
 			{ "Shape", Field { &Offsets::BasePart::Shape, &Types::BasePart::Shape } }
 		},
-		&Types::BasePart::start,
 		&Types::BasePart::end
 		});
 
@@ -107,7 +103,6 @@ void TypeMap::initTypes() {
 			{ "TeamColor", Field { &Offsets::Player::TeamColor, &Types::Player::TeamColor } },
 			{ "AccountAge", Field { &Offsets::Player::AccountAge, &Types::Player::AccountAge } }
 		},
-		&Types::Player::start,
 		&Types::Player::end
 		});
 
@@ -118,7 +113,6 @@ void TypeMap::initTypes() {
 			{ "FieldOfView", Field { &Offsets::Camera::FieldOfView, &Types::Camera::FieldOfView } },
 			{ "ViewportSize", Field { &Offsets::Camera::ViewportSize, &Types::Camera::ViewportSize } }
 		},
-		&Types::Camera::start,
 		&Types::Camera::end
 		});
 
@@ -127,7 +121,6 @@ void TypeMap::initTypes() {
 			{ "World", Field { &Offsets::Workspace::World, &Types::Workspace::World } },
 			{ "CurrentCamera", Field { &Offsets::Workspace::CurrentCamera, &Types::Workspace::CurrentCamera } }
 		},
-		&Types::Workspace::start,
 		&Types::Workspace::end
 		});
 
@@ -137,7 +130,6 @@ void TypeMap::initTypes() {
 			{ "MaxHealth", Field { &Offsets::Humanoid::MaxHealth, &Types::Humanoid::MaxHealth } },
 			{ "RigType", Field { &Offsets::Humanoid::RigType, &Types::Humanoid::RigType } }
 		},
-		&Types::Humanoid::start,
 		&Types::Humanoid::end
 		});
 
@@ -165,7 +157,6 @@ void TypeMap::initTypes() {
 			{ "AssetID", Field { &Offsets::LRUNode::AssetID, &Types::LRUNode::AssetID } },
 			{ "CachedItem", Field { &Offsets::LRUNode::CachedItem, &Types::LRUNode::CachedItem } }
 		},
-		&Types::LRUNode::start,
 		&Types::LRUNode::end
 		});
 
@@ -184,7 +175,6 @@ void TypeMap::initTypes() {
 			{ "Faces", Field { &Offsets::FileMeshData::Faces, &Types::FileMeshData::Faces } },
 			{ "FacesEnd", Field { &Offsets::FileMeshData::FacesEnd, &Types::FileMeshData::FacesEnd } }
 		},
-		&Types::FileMeshData::start,
 		&Types::FileMeshData::end
 		});
 }

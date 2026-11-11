@@ -91,6 +91,7 @@ namespace Offsets {
         inline uintptr_t Position = 0;
         inline uintptr_t AssemblyLinearVelocity = 0;
         inline uintptr_t Size = 0;
+        inline uintptr_t Owner = 0;
     }
 
     namespace Workspace {

@@ -17,10 +17,9 @@ struct Field {
 
 struct TypeDef {
 	std::unordered_map<std::string, Field> fields;
-	uint32_t* start;
 	uint32_t* end;
 
-	TypeDef(std::unordered_map<std::string, Field> fields, uint32_t* start = 0, uint32_t* end = 0) : fields(std::move(fields)), start(start), end(end) {}
+	TypeDef(std::unordered_map<std::string, Field> fields, uint32_t* start = 0, uint32_t* end = 0) : fields(std::move(fields)), end(end) {}
 
 	void load(nlohmann::json& o, nlohmann::json& t);
 };

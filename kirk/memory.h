@@ -20,7 +20,8 @@ namespace Memory {
 
 	[[nodiscard]] String readString(uintptr_t addr);
 
-	[[nodiscard]] std::optional<std::vector<std::byte>> read(uintptr_t addr, uint32_t start, uint32_t end);
+	[[nodiscard]] std::optional<std::vector<std::byte>> read(uintptr_t addr, uint32_t end);
+	[[nodiscard]] bool read(std::vector<std::byte>& buff, uintptr_t addr, uint32_t end);
 
 	template<typename T>
 	[[nodiscard]] std::optional<T> read(uintptr_t addr) {
